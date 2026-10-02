@@ -82,18 +82,25 @@ Format:
 2. KURZFRISTIG (Tage bis Wochen): 3 Aktien – Name, Ticker, Begründung (1-2 Sätze), Risiko
 3. LANGFRISTIG (Jahre): 3 Aktien oder ETFs – Name, Ticker, Begründung (1-2 Sätze), Risiko
 4. Vorsicht: Aktien, die gerade überhypt wirken (Meme-Hype, Pump-Verdacht)
+5. MEINE EMPFEHLUNG FÜR DIESEN MONAT: Der Anleger hat 200 € pro Monat zur Verfügung.
+   Mache einen konkreten Aufteilungsvorschlag (z. B. 120 € ETF/Langfrist, 80 € kurzfristige Idee),
+   nenne pro Position den Betrag in €, die empfohlene Haltedauer (z. B. 2-4 Wochen,
+   6-12 Monate, 5+ Jahre) und wann man verkaufen oder neu bewerten sollte (Kursziel / Stop-Loss).
+   Wenn die Lage unsicher ist, darf die Empfehlung auch lauten, einen Teil des Geldes
+   abzuwarten. Berücksichtige, dass bei kleinen Beträgen Orderkosten ins Gewicht fallen
+   und Sparpläne/Bruchstücke bei Trade Republic möglich sind.
 
 Regeln:
 - Nur Titel, die bei Trade Republic handelbar sind (große, bekannte Werte/ETFs).
 - Stütze dich auf die gelieferten Daten, erfinde keine Kurse oder Zahlen.
-- Max. 2500 Zeichen, kein Markdown, nur Text und Emojis.
+- Max. 3500 Zeichen, kein Markdown, nur Text und Emojis.
 - Am Ende ein Satz: Keine Anlageberatung, eigene Recherche nötig.
 
 DATEN:
 {data}"""
     msg = client.messages.create(
         model=MODEL,
-        max_tokens=1500,
+        max_tokens=2500,
         messages=[{"role": "user", "content": prompt}],
     )
     return "".join(b.text for b in msg.content if b.type == "text")
