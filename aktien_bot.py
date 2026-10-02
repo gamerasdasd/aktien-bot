@@ -96,7 +96,7 @@ DATEN:
         max_tokens=1500,
         messages=[{"role": "user", "content": prompt}],
     )
-    return msg.content[0].text
+    return "".join(b.text for b in msg.content if b.type == "text")
 
 
 def send_telegram(text: str) -> None:
