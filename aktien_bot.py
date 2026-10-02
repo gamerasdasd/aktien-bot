@@ -16,9 +16,9 @@ import feedparser
 import anthropic
 
 # ============ EINSTELLUNGEN (als Umgebungsvariablen setzen) ============
-TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]      # von @BotFather
-TELEGRAM_CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]  # deine Chat-ID
-ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
+TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"].strip()      # von @BotFather
+TELEGRAM_CHAT_ID = os.environ["TELEGRAM_CHAT_ID"].strip()  # deine Chat-ID
+ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"].strip()
 MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5-5")
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (aktien-bot)"}
